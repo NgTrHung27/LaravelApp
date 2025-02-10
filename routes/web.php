@@ -3,6 +3,7 @@
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PostController;
 
 // Route::get('products', [ProductsController::class, 'index']);
 // Route::get('products/{productName}/{id}', [
@@ -10,9 +11,11 @@ use App\Http\Controllers\ProductsController;
 //     'details'
 // ])->where(['productName' => '[a-zA-Z0-9]+', 'id' => '[0-9]+']);
 // Route::get('products/{productName}', [ProductsController::class, 'details']);
-Route::get('/', [PagesController::class, 'index']);
-Route::get('/about', [PagesController::class, 'about']);
-
+// Route::get('/', [PagesController::class, 'index']);
+// Route::get('/about', [PagesController::class, 'about']);
+Route::get('/', [PostController::class, 'index']);
+Route::get('/about', [PostController::class, 'about']);
+Route::get('/posts', [PostController::class, 'posts']);
 
 
 //------------------------------------------
