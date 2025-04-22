@@ -17,10 +17,10 @@ return new class extends Migration
         //php artisan migrate:refresh => donot all down()
         //php artisan migrate:fresh => delete all tables and migrate
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('table');
+            $table->increments('id');
+            $table->string('title');
             $table->text('body');
-            $table->timestamps();
+            $table->timestamps(); //created_at, updated_at
         });
     }
 

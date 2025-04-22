@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodsController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
@@ -13,9 +14,11 @@ use App\Http\Controllers\PostController;
 // Route::get('products/{productName}', [ProductsController::class, 'details']);
 // Route::get('/', [PagesController::class, 'index']);
 // Route::get('/about', [PagesController::class, 'about']);
-Route::get('/', [PostController::class, 'index']);
-Route::get('/about', [PostController::class, 'about']);
-Route::get('/posts', [PostController::class, 'posts']);
+Route::get('/', [PagesController::class, 'index']);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/posts', [PagesController::class, 'index']);
+
+Route::resource('foods', FoodsController::class);
 
 
 //------------------------------------------
